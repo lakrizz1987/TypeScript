@@ -1,6 +1,11 @@
-function add(n1, n2) {
-    return n1 + n2;
+function add(n1, n2, showResult, text) {
+    var result = n1 + n2;
+    if (showResult) {
+        return text + result;
+    }
 }
 var a = 2;
 var b = 3;
-console.log(add(a, b));
+var showResult = true;
+var text = 'Result is: ';
+console.log(add(a, b, showResult, text));
