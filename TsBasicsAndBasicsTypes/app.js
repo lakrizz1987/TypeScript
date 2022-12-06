@@ -1,17 +1,14 @@
-var Gender;
-(function (Gender) {
-    Gender[Gender["MALE"] = 0] = "MALE";
-    Gender[Gender["FEMALE"] = 1] = "FEMALE";
-})(Gender || (Gender = {}));
-var person = {
-    name: 'Ivo',
-    age: 34,
-    hobies: ['Sport', 'TV'],
-    mix: [1, 'play'],
-    role: [{ role: 'admin' }],
-    role2: ['Ivo', true],
-    gender: Gender.MALE
-};
-console.log(person.name);
-console.log(person.gender);
-person.hobies.forEach(function (hobby) { return console.log(hobby.toUpperCase()); });
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+function greet(user) {
+    console.log("Hi I am ".concat(user.name, " on ").concat(user.age));
+}
+greet({ name: 'Ivo', age: 34 });
