@@ -1,21 +1,14 @@
-type Input = number | string;
-type User = { name: string, age: number }
+function add(n1: number, n2: number) {
+    return n1 + n2
+};
 
-function combine(input1: Input, input2: Input) {
-    let result;
-
-    if (typeof input1 === 'number' && typeof input2 === 'number') {
-
-        result = input1 + input2;
-    } else {
-        result = input1.toString() + input2.toString()
-    }
-
-    return result;
+function printResult(num: number): void {
+    console.log(num)
 }
 
-function greet(user: User) {
-    console.log(`Hi I am ${user.name} on ${user.age}`)
-}
+printResult(add(6, 12))
+type User = { name: string; age: number; show: (num: number) => void }
 
-greet({ name: 'Ivo', age: 34 })
+let person: User = { name: 'Ivo', age: 32, show: printResult }
+
+person.show(person.age)
