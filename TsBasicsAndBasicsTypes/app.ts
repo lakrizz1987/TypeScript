@@ -1,23 +1,12 @@
-enum Gender {MALE, FEMALE}
+function combine(input1: number | string, input2: number | string) {
+    let result;
 
-const person: {
-    name: string;
-    age: number
-    hobies: string[];
-    mix: any[];
-    role: { role: string }[]
-    role2: [string, boolean]
-    gender: Gender
-} = {
-    name: 'Ivo',
-    age: 34,
-    hobies: ['Sport', 'TV'],
-    mix: [1, 'play'],
-    role: [{ role: 'admin' }],
-    role2: ['Ivo', true],
-    gender: Gender.MALE
+    if (typeof input1 === 'number' && typeof input2 === 'number') {
+
+        result = input1 + input2;
+    }else{
+        result = input1.toString() + input2.toString()
+    }
+
+    return result;
 }
-
-console.log(person.name)
-console.log(person.gender)
-person.hobies.forEach(hobby => console.log(hobby.toUpperCase()));
