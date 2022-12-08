@@ -1,16 +1,17 @@
 // Code goes here!
 class Department {
     name: string;
-    number: number;
+    readonly id: number;
     private employees: string[] = [];
 
     constructor(name: string, number: number) {
         this.name = name;
-        this.number = number;
+        this.id = number;
     }
 
     print() {
-        console.log('Hello from ' + this.name)
+        console.log('Hello from ' + this.name);
+        //this.id = 4 - this throw error because id is read only
     }
 
     addEmployee(name: string) {
