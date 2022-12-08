@@ -7,7 +7,12 @@ class Department {
         this.name = name;
         this.number = number;
     }
+
+    print() {
+        console.log('Hello from ' + this.name)
+    }
 }
 
-const accounting = new Department('Accounting',1);
+const accounting = new Department('Accounting', 1);
 console.log(accounting)
+accounting.print();
