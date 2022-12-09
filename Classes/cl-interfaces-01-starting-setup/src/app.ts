@@ -18,6 +18,10 @@ class Department {
         this.id = number;
     }
 
+    static createEmployee(person: string) {
+        return { name: person }
+    }
+
     print() {
         console.log('Hello from ' + this.name);
         //this.id = 4 - this throw error because id is read only
@@ -41,6 +45,8 @@ class ITdepartament extends Department {
         this.admins = admins;
     }
 }
+
+console.log(Department.createEmployee('Milo'));
 
 const accounting = new Department('Accounting', 1);
 console.log(accounting);
