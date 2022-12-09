@@ -4,6 +4,15 @@ class Department {
     readonly id: number;
     private employees: string[] = [];
 
+    get employessData() {
+        return this.employees;
+    }
+
+    set employessDataInfo(person: string) {
+        this.addEmployee(person);
+    }
+
+
     constructor(name: string, number: number) {
         this.name = name;
         this.id = number;
@@ -38,7 +47,9 @@ console.log(accounting);
 
 accounting.addEmployee('Max');
 accounting.addEmployee('Ivo');
+accounting.employessDataInfo = 'Pesho Petrov';
 
+console.log(accounting.employessData);
 // accounting.employees[2] = 'Pesho' - When is private is only accesible from inside of class
 
 accounting.printEmployeesInfo()
