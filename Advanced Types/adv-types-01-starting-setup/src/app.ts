@@ -99,3 +99,9 @@ function animalInfo(animal: Animal) {
 animalInfo({type:'dog',runningSpeed:8})
 animalInfo({type:'bird',flyingSpeed:88})
 
+// Type casting
+
+//const inputElement = document.getElementById('input-user')! as HTMLInputElement;
+const inputElement = <HTMLInputElement>document.getElementById('input-user')!;
+
+inputElement.value = 'Hey there...'
