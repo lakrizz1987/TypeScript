@@ -18,6 +18,7 @@ const u1: User = {
     startDate: new Date()
 }
 
+// Type Guards
 function showUserInfo(user: User) {
     console.log(user.name);
     if ('privileges' in user) {
@@ -30,6 +31,8 @@ function showUserInfo(user: User) {
 }
 
 //showUserInfo(u1)
+
+
 
 class Car {
     drive() {
@@ -60,5 +63,39 @@ function useVehicle(vehicle: Vehicle, amount: number) {
     }
 }
 
-useVehicle(car,6)
-useVehicle(truck,5)
+useVehicle(car, 6)
+useVehicle(truck, 5)
+
+// Discriminated Unions
+
+interface Bird {
+    type: 'bird';
+    flyingSpeed: number;
+}
+
+interface Dog {
+    type: 'dog';
+    runningSpeed: number;
+}
+
+type Animal = Bird | Dog;
+
+function animalInfo(animal: Animal) {
+    let speed;
+    switch (animal.type) {
+        case ('bird'):
+            speed = animal.flyingSpeed;
+            break;
+
+        case ('dog'):
+            speed = animal.runningSpeed;
+            break
+
+
+    }
+    console.log('Speed is ' + speed)
+}
+
+animalInfo({type:'dog',runningSpeed:8})
+animalInfo({type:'bird',flyingSpeed:88})
+
