@@ -107,7 +107,7 @@ const inputElement = <HTMLInputElement>document.getElementById('input-user')!;
 inputElement.value = 'Hey there...'
 
 
-//Nullish
+//Nullish ?? - if something is undefine or null return the other value
 
 const userData = null;
 
