@@ -105,3 +105,12 @@ animalInfo({type:'bird',flyingSpeed:88})
 const inputElement = <HTMLInputElement>document.getElementById('input-user')!;
 
 inputElement.value = 'Hey there...'
+
+
+//Nullish
+
+const userData = null;
+
+const sortedData = userData ?? 'Default'
+
+console.log(sortedData)
